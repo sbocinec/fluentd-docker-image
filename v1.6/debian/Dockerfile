@@ -41,7 +41,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-RUN groupadd -r fluent && useradd -r -g fluent fluent \
+RUN groupadd -r fluent && useradd -r -m -g fluent fluent \
     # for log storage (maybe shared with host)
     && mkdir -p /fluentd/log \
     # configuration/plugins path (default: copied from .)
